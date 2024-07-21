@@ -1,0 +1,26 @@
+{
+  "far_thunder": {
+    "subtitle": "sounds.betterlightning.far_thunder",
+    "sounds": [
+      "betterlightning:farthunder"
+    ]
+  },
+  "medium_thunder": {
+    "subtitle": "sounds.betterlightning.medium_thunder",
+    "sounds": [
+      "betterlightning:mediumthunder"
+    ]
+  },
+  "short_thunder": {
+    "subtitle": "sounds.betterlightning.short_thunder",
+    "sounds": [
+      "betterlightning:shortthunder"
+    ]
+  },
+  "close_thunder": {
+    "subtitle": "sounds.betterlightning.close_thunder",
+    "sounds": [
+      "betterlightning:closethunder"
+    ]
+  }
+}
