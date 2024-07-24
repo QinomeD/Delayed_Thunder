@@ -2,25 +2,25 @@
   "far_thunder": {
     "subtitle": "sounds.betterlightning.far_thunder",
     "sounds": [
-      "betterlightning:farthunder"
+      "betterlightning:far1"
     ]
   },
   "medium_thunder": {
     "subtitle": "sounds.betterlightning.medium_thunder",
     "sounds": [
-      "betterlightning:mediumthunder"
+      "betterlightning:medium1", "betterlightning:medium2"
     ]
   },
   "short_thunder": {
     "subtitle": "sounds.betterlightning.short_thunder",
     "sounds": [
-      "betterlightning:shortthunder"
+      "betterlightning:short1", "betterlightning:short2"
     ]
   },
-  "close_thunder": {
-    "subtitle": "sounds.betterlightning.close_thunder",
+  "normal_thunder": {
+    "subtitle": "sounds.betterlightning.normal_thunder",
     "sounds": [
-      "betterlightning:closethunder"
+      "betterlightning:normal1", "betterlightning:normal2"
     ]
   }
 }
