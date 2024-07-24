@@ -6,8 +6,13 @@ import net.jewwis.betterlightning.ticktimer.TickEventHandler;
 import net.jewwis.betterlightning.ticktimer.TickTimer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.sound.PlaySoundEvent;
@@ -30,29 +35,28 @@ public class SoundEventHandler {
             float x2 = (float) Objects.requireNonNull(event.getSound()).getX();
             float y2 = (float) Objects.requireNonNull(event.getSound()).getY();
             float z2 = (float) Objects.requireNonNull(event.getSound()).getZ();
+            BlockPos lightningPos = new BlockPos((int)x2, (int)y2, (int)z2);
+            event.setSound(null);
 
             Player player = Minecraft.getInstance().player;
+            Level world = Minecraft.getInstance().level;
             if (player != null){
                 float x1 = (float) player.getX();
                 float y1 = (float) player.getY();
                 float z1 = (float) player.getZ();
                 int a = getDistance(x1, y1, z1, x2, y2, z2);
-                player.sendSystemMessage(Component.literal("Distance: " + a));
-                event.setSound(null);
+                assert world != null;
 
                 if (a >= Config.distanceShort && a < Config.distanceMedium) {
                     TickEventHandler.addTimer(new TickTimer(Config.timeShort, () -> {
-                        System.out.println("2.25 Seconds Delay");
                         player.playSound(ModSounds.SHORTTHUNDER.get(), 0.8f, 1.0f);
                     }));
                 } else if (a >= Config.distanceMedium && a < Config.distanceFar) {
                     TickEventHandler.addTimer(new TickTimer(Config.timeMedium, () -> {
-                        System.out.println("4.5 Seconds Delay");
                         player.playSound(ModSounds.MEDIUMTHUNDER.get(), 2.0f, 1.0f);
                     }));
                 } else if (a >= Config.distanceFar) {
                     TickEventHandler.addTimer(new TickTimer(Config.timeLong, () -> {
-                        System.out.println("7.5 Seconds Delay");
                         player.playSound(ModSounds.FARTHUNDER.get(), 1.0f, 1.0f);
                     }));
                 } else {
