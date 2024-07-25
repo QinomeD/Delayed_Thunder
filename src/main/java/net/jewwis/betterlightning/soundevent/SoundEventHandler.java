@@ -38,13 +38,11 @@ public class SoundEventHandler {
             event.setSound(null);
 
             Player player = Minecraft.getInstance().player;
-            Level world = Minecraft.getInstance().level;
             if (player != null){
                 float x1 = (float) player.getX();
                 float y1 = (float) player.getY();
                 float z1 = (float) player.getZ();
                 int a = getDistance(x1, y1, z1, x2, y2, z2);
-                assert world != null;
 
                 if (a >= Config.distanceShort && a < Config.distanceMedium) {
                     TickEventHandler.addTimer(new TickTimer(Config.timeShort, () -> {
