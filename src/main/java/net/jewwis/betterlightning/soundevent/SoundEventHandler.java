@@ -35,7 +35,6 @@ public class SoundEventHandler {
             float x2 = (float) Objects.requireNonNull(event.getSound()).getX();
             float y2 = (float) Objects.requireNonNull(event.getSound()).getY();
             float z2 = (float) Objects.requireNonNull(event.getSound()).getZ();
-            BlockPos lightningPos = new BlockPos((int)x2, (int)y2, (int)z2);
             event.setSound(null);
 
             Player player = Minecraft.getInstance().player;

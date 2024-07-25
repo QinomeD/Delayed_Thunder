@@ -20,8 +20,6 @@ public class BetterLightning {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "betterlightning";
 
-    public static Configuration config;
-
     public BetterLightning() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.SPEC);
@@ -29,8 +27,7 @@ public class BetterLightning {
         ModSounds.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
-        //FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
-        //Register EventHandler
+
         MinecraftForge.EVENT_BUS.register(new SoundEventHandler());
         MinecraftForge.EVENT_BUS.register(new TickEventHandler());
 
