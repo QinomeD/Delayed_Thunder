@@ -18,7 +18,7 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> NORMALTHUNDER = registerSoundEvents("normal_thunder");
 
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
-        return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(BetterLightning.MODID, name)));
+        return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(BetterLightning.MODID, name)));
     }
 
     public static void register(IEventBus eventBus){

@@ -1,6 +1,5 @@
 package net.jewwis.betterlightning;
 
-import com.mojang.logging.LogUtils;
 import net.jewwis.betterlightning.soundevent.ModSounds;
 import net.jewwis.betterlightning.soundevent.SoundEventHandler;
 import net.jewwis.betterlightning.ticktimer.TickEventHandler;
@@ -10,9 +9,6 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.slf4j.Logger;
-
-import java.lang.module.Configuration;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(BetterLightning.MODID)
