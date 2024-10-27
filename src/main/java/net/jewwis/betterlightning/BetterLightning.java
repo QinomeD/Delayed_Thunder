@@ -1,8 +1,6 @@
 package net.jewwis.betterlightning;
 
 import net.jewwis.betterlightning.soundevent.ModSounds;
-import net.jewwis.betterlightning.soundevent.SoundEventHandler;
-import net.jewwis.betterlightning.ticktimer.TickEventHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -23,10 +21,6 @@ public class BetterLightning {
         ModSounds.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
-
-        MinecraftForge.EVENT_BUS.register(new SoundEventHandler());
-        MinecraftForge.EVENT_BUS.register(new TickEventHandler());
-
     }
 
 }
